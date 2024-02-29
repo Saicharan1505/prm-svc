@@ -20,7 +20,7 @@ public class HomeController {
 
     @GetMapping
     public String greetings(){
-        return "welcome to the primes service!";
+        return "welcome to the primes servicessss!";
     }
 
     @GetMapping("prime/{n}")
