@@ -34,5 +34,5 @@ jobs:
         run: |
 #          docker login --username saicharan1505 --password ${{secrets.ACCESS_TOKEN}} ghcr.io
           docker login --username saicharan1505 --password ${{secrets.ACCESS_TOKEN}} ghcr.io
-          docker build -t ghcr.io/saicharan1505/prime-service:latest --file Dockerfile .  
-          docker push ghcr.io/saicharan1505/prime-service:latest
+          docker build -t ghcr.io/saicharan1505/prm-svc:latest --file Dockerfile .  
+          docker push ghcr.io/saicharan1505/prm-svc:latest
