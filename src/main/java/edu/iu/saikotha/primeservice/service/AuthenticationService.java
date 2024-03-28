@@ -26,7 +26,7 @@ public class AuthenticationService implements IAuthenticationService, UserDetail
 
     @Override
     public boolean login(String username, String password) {
-        // Implementation logic here
+        // Implementation logic
         return false; // Placeholder return value
     }
 
