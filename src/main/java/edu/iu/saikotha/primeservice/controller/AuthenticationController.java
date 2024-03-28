@@ -45,7 +45,7 @@ public class AuthenticationController {
                         customer.getPassword())
         );
 
-//        return "success";
+//     return "success";
 
         return tokenService.generateToken(authentication);
 
