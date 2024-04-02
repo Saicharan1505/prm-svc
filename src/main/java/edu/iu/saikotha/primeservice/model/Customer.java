@@ -20,7 +20,7 @@ public class Customer {
 
     }
 
-
+    //class
     public Customer(String username, String password){
         this.username = username;
         this.password = password;
