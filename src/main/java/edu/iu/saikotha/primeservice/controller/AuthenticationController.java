@@ -29,7 +29,7 @@ public class AuthenticationController {
 
 
     @PostMapping("/register")
-    public boolean register(@RequestBody Customer customer) {
+    public Customer register(@RequestBody Customer customer) {
         try {
             return authenticationService.register(customer);
 

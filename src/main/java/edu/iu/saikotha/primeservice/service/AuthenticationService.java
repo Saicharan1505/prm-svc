@@ -1,6 +1,7 @@
 package edu.iu.saikotha.primeservice.service;
 
 import edu.iu.saikotha.primeservice.model.Customer;
+import edu.iu.saikotha.primeservice.repository.AuthenticationDBRepository;
 import edu.iu.saikotha.primeservice.repository.AuthenticationFileRepository;
 import edu.iu.saikotha.primeservice.repository.IAuthenticationRepository;
 import org.springframework.security.core.userdetails.User;
@@ -18,9 +19,9 @@ import java.io.IOException;
 @Service
 public class AuthenticationService implements IAuthenticationService, UserDetailsService {
 
-    IAuthenticationRepository authenticationRepository;
+    AuthenticationDBRepository authenticationRepository;
 
-    public AuthenticationService(IAuthenticationRepository authenticationRepository){
+    public AuthenticationService(AuthenticationDBRepository authenticationRepository){
         this.authenticationRepository = authenticationRepository;
     }
 
@@ -31,7 +32,7 @@ public class AuthenticationService implements IAuthenticationService, UserDetail
     }
 
     @Override
-    public boolean register(Customer customer) throws IOException{
+    public Customer register(Customer customer) throws IOException{
         BCryptPasswordEncoder bc = new BCryptPasswordEncoder();
         String passwordEncoded = bc.encode(customer.getPassword());
         customer.setPassword(passwordEncoded);
@@ -51,7 +52,7 @@ public class AuthenticationService implements IAuthenticationService, UserDetail
                     .build();
 
         }
-        catch(IOException e){
+        catch(Exception e){
             throw new RuntimeException(e);
         }
 
