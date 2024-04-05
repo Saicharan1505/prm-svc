@@ -59,7 +59,7 @@ public class SecurityConfig {
                 .csrf(x -> x.disable())
                 .authorizeHttpRequests( auth -> auth
                         .requestMatchers(
-                                HttpMethod.POST, "/register","/login").permitAll()
+                                HttpMethod.POST, "/register","/login","**/primes/**").permitAll()
                 .anyRequest().authenticated()
         )
         .sessionManagement(session ->

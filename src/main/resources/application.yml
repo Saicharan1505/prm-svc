@@ -10,8 +10,11 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
   sql:
-    inti:
-      mode: always
+    init:
+      mode:always
 
-server:
-  port: 8085
+  rabbitmq:
+    host: localhost
+    port: 4006
+    username: guest
+    password: guest
